@@ -12,3 +12,4 @@ npm i -g @loopback/cli
 
 npm start
 
+**For more steps navigate to the course_dir folder in repo**
