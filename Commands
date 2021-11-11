@@ -1,0 +1,205 @@
+Last login: Thu Nov 11 09:38:47 on ttys000
+divyahemanth@Divyas-MacBook-Pro ~ % npm i -g @loopback/cli
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated unicode-10.0.0@0.7.5: Use @unicode/unicode-10.0.0 instead.
+
+changed 831 packages, and audited 832 packages in 31s
+
+64 packages are looking for funding
+  run `npm fund` for details
+
+22 vulnerabilities (7 moderate, 15 high)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+divyahemanth@Divyas-MacBook-Pro ~ % lb4 course            
+? Project description: course
+? Project root directory: course_dir
+? Application class name: CourseApplication
+? Select features to enable in the project Enable eslint, Enable prettier, Enabl
+e mocha, Enable loopbackBuild, Enable vscode, Enable docker, Enable repositories
+, Enable services
+? Yarn is available. Do you prefer to use it by default? No
+    force .yo-rc.json
+   create .eslintignore
+   create .eslintrc.js
+   create .mocharc.json
+   create .prettierignore
+   create .prettierrc
+   create DEVELOPING.md
+   create package.json
+   create tsconfig.json
+   create .vscode/launch.json
+   create .vscode/settings.json
+   create .vscode/tasks.json
+   create .gitignore
+   create .dockerignore
+   create Dockerfile
+   create README.md
+   create public/index.html
+   create src/application.ts
+   create src/index.ts
+   create src/migrate.ts
+   create src/openapi-spec.ts
+   create src/sequence.ts
+   create src/__tests__/README.md
+   create src/controllers/README.md
+   create src/controllers/index.ts
+   create src/controllers/ping.controller.ts
+   create src/datasources/README.md
+   create src/models/README.md
+   create src/repositories/README.md
+   create src/__tests__/acceptance/home-page.acceptance.ts
+   create src/__tests__/acceptance/ping.controller.acceptance.ts
+   create src/__tests__/acceptance/test-helper.ts
+npm WARN deprecated formidable@1.2.6: Please upgrade to latest, formidable@v2 or formidable@v3! Check these notes: https://bit.ly/2ZEqIau
+npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+
+added 578 packages, and audited 579 packages in 29s
+
+68 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+Application course was created in course_dir.
+
+Next steps:
+
+$ cd course_dir
+$ npm start
+
+divyahemanth@Divyas-MacBook-Pro ~ % cd course_dir         
+divyahemanth@Divyas-MacBook-Pro course_dir % npm start
+
+> course@0.0.1 prestart
+> npm run rebuild
+
+
+> course@0.0.1 rebuild
+> npm run clean && npm run build
+
+
+> course@0.0.1 clean
+> lb-clean dist *.tsbuildinfo .eslintcache
+
+
+> course@0.0.1 build
+> lb-tsc
+
+
+> course@0.0.1 start
+> node -r source-map-support/register .
+
+Server is running at http://[::1]:3000
+Try http://[::1]:3000/ping
+^C
+divyahemanth@Divyas-MacBook-Pro course_dir % lb4 model
+? Model class name: course
+? Please select the model base class Entity (A persisted model with an ID)
+? Allow additional (free-form) properties? No
+Model Course will be created in src/models/course.model.ts
+
+Let's add a property to Course
+Enter an empty property name when done
+
+? Enter the property name: id
+? Property type: string
+? Is id the ID property? Yes
+? Is id generated automatically? No
+? Is it required?: Yes
+
+Let's add another property to Course
+Enter an empty property name when done
+
+? Enter the property name: title
+? Property type: string
+? Is it required?: Yes
+
+Let's add another property to Course
+Enter an empty property name when done
+
+? Enter the property name: professor
+? Property type: string
+? Is it required?: Yes
+
+Let's add another property to Course
+Enter an empty property name when done
+
+? Enter the property name: 
+   create src/models/course.model.ts
+   update src/models/index.ts
+
+Model Course was/were created in src/models
+
+divyahemanth@Divyas-MacBook-Pro course_dir % lb4 datasource
+? Datasource name: db
+? Select the connector for db:  In-memory db (supported by StrongLoop)
+? window.localStorage key to use for persistence (browser only): 
+? Full path to file for persistence (server only): 
+   create src/datasources/db.datasource.ts
+   update src/datasources/index.ts
+
+Datasource Db was/were created in src/datasources
+
+divyahemanth@Divyas-MacBook-Pro course_dir % lb4 repository
+? Please select the datasource DbDatasource
+? Select the model(s) you want to generate a repository for Course
+? Please select the repository base class DefaultCrudRepository (Juggler bridge)
+
+
+   create src/repositories/course.repository.ts
+   update src/repositories/index.ts
+
+Repository CourseRepository was/were created in src/repositories
+
+divyahemanth@Divyas-MacBook-Pro course_dir % lb4 controller
+? Controller class name: course_controller
+>>> Underscores _ in the class name will get removed: course_controller
+Controller CourseController will be created in src/controllers/course-controller.controller.ts
+
+? What kind of controller would you like to generate? REST Controller with CRUD 
+functions
+? What is the name of the model to use with this CRUD repository? Course
+? What is the name of your CRUD repository? CourseRepository
+? What is the name of ID property? ID
+? What is the type of your ID? string
+? Is the id omitted when creating a new instance? No
+? What is the base HTTP path name of the CRUD operations? /courses
+   create src/controllers/course-controller.controller.ts
+   update src/controllers/index.ts
+
+Controller CourseController was/were created in src/controllers
+
+divyahemanth@Divyas-MacBook-Pro course_dir % npm start
+
+> course@0.0.1 prestart
+> npm run rebuild
+
+
+> course@0.0.1 rebuild
+> npm run clean && npm run build
+
+
+> course@0.0.1 clean
+> lb-clean dist *.tsbuildinfo .eslintcache
+
+
+> course@0.0.1 build
+> lb-tsc
+
+
+> course@0.0.1 start
+> node -r source-map-support/register .
+
+Server is running at http://[::1]:3000
+Try http://[::1]:3000/ping
+^C
+divyahemanth@Divyas-MacBook-Pro course_dir % code .
+divyahemanth@Divyas-MacBook-Pro course_dir % 
